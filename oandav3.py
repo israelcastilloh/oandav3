@@ -168,6 +168,4 @@ access_token = ""
 test = API('practice', access_token, upper_account)
 test = test.get_instruments()
 print(test)
-# def get_instruments(environment, token, upper_account):
-# response = requests.get('https://api-fxpractice.oanda.com/v3/accounts/101-011-16494438-002/instruments', auth=BearerAuth('4d5aad4aa2939a132fe264df7592d9ab-6a99aceb020a93917af53376dbb1a8d5'))
-# general = pd.read_json(response.text)
+
