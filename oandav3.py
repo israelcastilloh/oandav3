@@ -10,11 +10,9 @@ class BearerAuth(requests.auth.AuthBase):
         return r
 
 class Endpoints(object):
-
-    '''
+    ''''''
     Accounts
-    '''
-
+    ''''''
     def get_instruments(self):
         endpoint = '/instruments'
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
@@ -33,11 +31,9 @@ class Endpoints(object):
         endpoint = '/summary'
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
         return pd.read_json(response.text)
-
-    '''
+    ''''''
     Instruments
-    '''
-
+    ''''''
     def instrument_candles(self, instrument):
         endpoint = '/candles'
         response = requests.get(self.api_url+'/v3/instruments/'+instrument+endpoint, auth=self.access_token)
@@ -52,10 +48,9 @@ class Endpoints(object):
         endpoint = '/positionBook'
         response = requests.get(self.api_url+'/v3/instruments/'+instrument+endpoint, auth=self.access_token)
         return pd.read_json(response.text)
-
-    '''
+    ''''''
     Orders
-    '''
+    ''''''
     def orders(self):
         endpoint = '/orders'
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
@@ -70,12 +65,9 @@ class Endpoints(object):
         endpoint = '/orders/'+order
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
         return pd.read_json(response.text)
-
-
-    '''
+    ''''''
     Trade
-    '''
-
+    ''''''
     def trades(self):
         endpoint = '/trades'
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
@@ -90,11 +82,9 @@ class Endpoints(object):
         endpoint = '/trades/'+trade
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
         return pd.read_json(response.text)
-
-    '''
+    ''''''
     Position
-    '''
-
+    ''''''
     def positions(self):
         endpoint = '/trades'
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
@@ -109,11 +99,9 @@ class Endpoints(object):
         endpoint = '/positions/'+instrument #must containt "_" in between currencies
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
         return pd.read_json(response.text)
-
-    '''
+    ''''''
     Transactions
-    '''
-
+    ''''''
     def transactions(self):
         endpoint = '/transactions'
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
@@ -133,12 +121,9 @@ class Endpoints(object):
         endpoint = '/transactions/sinceid?id='+since
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
         return pd.read_json(response.text)
-
-
-    '''
+    ''''''
     Pricing
-    '''
-
+    ''''''
     def pricing(self, instrument):
         endpoint = '/pricing?instruments='+instrument
         response = requests.get(self.api_url+'/v3/accounts/'+self.upper_account+endpoint, auth=self.access_token)
@@ -162,10 +147,9 @@ class API(Endpoints, object):
 
 
 
-upper_account = ""
-access_token = ""
+#account_id = ""
+#access_token = ""
 
-test = API('practice', access_token, upper_account)
-test = test.get_instruments()
-print(test)
+#conn = API('practice', access_token, account_id)
+#conn = conn.get_instruments()
 
