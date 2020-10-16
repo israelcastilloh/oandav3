@@ -162,8 +162,8 @@ class API(Endpoints, object):
 
 
 
-upper_account = "101-011-16495194-003"
-access_token = '943b86d29cf6de747a0baaec04ae968d-c04541e6dbc0f6150e0e1da06e3a1ca5'
+upper_account = ""
+access_token = ""
 
 test = API('practice', access_token, upper_account)
 test = test.get_instruments()
