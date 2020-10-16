@@ -3,13 +3,12 @@
 ## Set-Up
 ```python
 $ git clone https://github.com/israelcastilloh/oandav3
-
-from oandav3 import * 
 ```
 
 ## API
 
 ```python
+from oandav3 import * 
 
 upper_account = accountID
 access_token = token
