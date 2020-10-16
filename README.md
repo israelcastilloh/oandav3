@@ -20,8 +20,6 @@ $ pip3 install pandas
 ```python
 from oandav3 import * 
 
-upper_account = accountID
-access_token = token
 connection = API(environment, access_token, account_id)
         ''' @ Params: 
               environment = 'practice' / 'live' / 'sandbox'
