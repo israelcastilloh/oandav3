@@ -3,6 +3,16 @@
 ## Set-Up
 ```python
 $ git clone https://github.com/israelcastilloh/oandav3
+$ pip install requests
+$ pip install pandas
+```
+
+or if you have Python3:
+
+```python
+$ git clone https://github.com/israelcastilloh/oandav3
+$ pip3 install requests
+$ pip3 install pandas
 ```
 
 ## API
@@ -109,7 +119,6 @@ endpoint = connection.endpoint(**params)
 
 
 ```
-
 
 
 ```python
